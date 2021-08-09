@@ -47,6 +47,9 @@ function update(msg, model) {
 
 function app(initModel, update, view, node) {
   let model = initModel;
+  // current view is passed dispatch function which is a 
+  // function in the scope of the app function. 
+  // this allows current view access to the dispatch function in App
   let currentView = view(dispatch, model);
   // create a rootNode with createElement
   let rootNode = createElement(currentView);
